@@ -1,0 +1,24 @@
+/*
+Theme Name: Moba
+Theme URI: 
+Description: Welcart Basic Child Theme
+Author: 
+Author URI: 
+Template: welcart_basic
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: moba
+*/
+
+/* 親テーマのスタイルを読み込む */
+@import url('../welcart_basic/style.css');
+@import url('../welcart_basic/usces_cart.css');
+@import url('../welcart_basic/slide_showcase.css');
+@import url('../welcart_basic/wcex_multi_shipping.css');
+@import url('../welcart_basic/wcex_olwidget.css');
+@import url('../welcart_basic/wcex_sku_select.css');
+@import url('../welcart_basic/wcex_widget_cart.css');
+
+/* ここから子テーマ用のスタイルを追加 */
+@import url('moba.css');

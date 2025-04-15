@@ -1,0 +1,179 @@
+html * {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #000;
+}
+
+.header_bg {
+  min-width: 980px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url(../img/top_main.jpg);
+  display: block;
+  width: auto;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
+
+header#masthead {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  height: auto;
+  z-index: 100;
+  float: none;
+}
+.home header#masthead {
+  height: 100vh;
+}
+header#masthead .site-description {
+  width: auto;
+  height: auto;
+  min-height: auto;
+  padding: 0;
+  float: none;
+  background: none;
+  color: #fff;
+  line-height: 1.5;
+  font-size: 2.2em;
+  text-align: center;
+  margin: 1.5em 0;
+  font-family: serif;
+  letter-spacing: 0.05em;
+}
+.home header#masthead .site-description {
+  font-size: 3em;
+}
+header#masthead .site-title {
+  width: 180px;
+  padding: 130px 40px 50px 40px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  float: none;
+}
+.home header#masthead .site-title {
+  width: 240px;
+  padding: 130px 50px 60px 50px;
+}
+header#masthead .site-title a {
+  display: block;
+}
+header#masthead .snav.cf {
+  display: none;
+}
+header#masthead .inner {
+  display: block;
+  padding: 0;
+}
+header#masthead .inner.cf {
+  width: auto;
+}
+
+#site-navigation {
+  background: #000;
+  position: relative;
+  z-index: 100;
+}
+#site-navigation .header-nav-container {
+  background: #1d1d1d;
+}
+#site-navigation .header-nav-container ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#site-navigation .header-nav-container ul li {
+  float: none;
+  text-align: center;
+  border: none;
+}
+#site-navigation .header-nav-container ul li a {
+  padding: 1.5em;
+  font-size: 0.8em;
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+#main {
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  background: #fff;
+  z-index: 100;
+}
+#main .main_inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3em 0;
+}
+#main .main_inner #primary #content {
+  width: auto;
+  float: none;
+}
+#main .main_inner #primary #content article header.entry-header {
+  margin: 0 auto 3em;
+}
+#main .main_inner #primary #content article header.entry-header h1.entry-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin: 0 auto;
+}
+#main .main_inner #primary #content article .entry-content h1.wp-block-heading {
+  text-align: center;
+  font-size: 2.5em;
+  line-height: 1.5;
+  margin: 0 auto 1.5em;
+}
+#main .main_inner #primary #content article .entry-content h2.wp-block-heading {
+  font-size: 1.5em;
+  border: none;
+  margin: 0 auto 1em;
+}
+#main .main_inner #primary #content article .entry-content p {
+  line-height: 2;
+}
+#main .main_inner #primary #content .item-list-container .item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+#main .main_inner #primary #content .item-list-container .item-list .item-box {
+  gap: 1em;
+  flex: 1;
+  max-width: 20%;
+}
+#main .main_inner #primary #content .item-list-container .item-list .item-box .itemimg {
+  position: relative;
+}
+#main .main_inner #primary #content .item-list-container .item-list .item-box .itemimg img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.widget_title img {
+  display: none;
+}
+
+.widget_welcart_login input#member_loginw, .widget_welcart_login input#member_login {
+  background: #000;
+}
+
+footer {
+  position: relative;
+  z-index: 100;
+}/*# sourceMappingURL=moba.css.map */
