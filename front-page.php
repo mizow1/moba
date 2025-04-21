@@ -20,9 +20,9 @@ get_header();
 				the_post();
 				?>
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-					<h2 class="entry-title"><?php the_title(); ?></h2>
 					<div class="entry-content">
 						<?php the_content(); ?>
+						<?php display_post_list(); ?>
 					</div>
 				</article>
 			<?php else : ?>
@@ -34,6 +34,7 @@ get_header();
 
 		<?php else : ?>
 
+			<?php if(1==2): ?>
 			<section class="item-list-container">
 			<div class="item-list">
 			<?php
@@ -72,6 +73,7 @@ get_header();
 			?>
 						</div>
 			</section><!-- .item-list-container -->
+			<?php endif; ?>
 
 		<?php endif; ?>
 

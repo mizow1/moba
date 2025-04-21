@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
-
+	<script src="<?php echo esc_url(get_stylesheet_directory_uri('/')); ?>/js/flex_ratio.js"></script>
 	<?php wp_head(); ?>
 </head>
 
