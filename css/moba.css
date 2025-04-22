@@ -264,6 +264,70 @@ header#masthead .inner.cf {
   font-weight: bold;
 }
 
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 6em 0 3em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 1em 0;
+  position: relative;
+}
+.post-navigation:after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  width: 1px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+.post-navigation-prev, .post-navigation-next {
+  flex: 1;
+  max-width: 49%;
+  padding: 1.5em;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.post-navigation-prev:hover, .post-navigation-next:hover {
+  background-color: #f1f0f0;
+}
+.post-navigation-prev a, .post-navigation-next a {
+  display: block;
+  text-decoration: none;
+}
+.post-navigation-prev a .nav-label, .post-navigation-next a .nav-label {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 0.5em;
+}
+.post-navigation-prev a .nav-title, .post-navigation-next a .nav-title {
+  display: block;
+  font-size: 1.2em;
+  line-height: 1.4;
+  color: #333;
+  font-weight: 500;
+}
+.post-navigation-prev.empty, .post-navigation-next.empty {
+  background-color: transparent;
+}
+.post-navigation-prev {
+  text-align: left;
+}
+.post-navigation-prev a .nav-label:before {
+  content: "←";
+  margin-right: 0.5em;
+}
+.post-navigation-next {
+  text-align: right;
+}
+.post-navigation-next a .nav-label:after {
+  content: "→";
+  margin-left: 0.5em;
+}
+
 footer {
   position: relative;
   z-index: 100;

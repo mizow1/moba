@@ -309,6 +309,82 @@ header#masthead {
 }
 
 
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 6em 0 3em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0;
+    position: relative;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        left: 50%;
+        width: 1px;
+        background-color: #ccc;
+        transform: translateX(-50%);
+    }
+    
+    &-prev, &-next {
+        flex: 1;
+        max-width: 49%;
+        padding: 1.5em;
+        transition: all 0.3s ease;
+        position: relative;
+        
+        &:hover {
+            background-color: #f1f0f0;
+        }
+        
+        a {
+            display: block;
+            text-decoration: none;
+            
+            .nav-label {
+                display: block;
+                font-size: 0.9em;
+                color: #666;
+                margin-bottom: 0.5em;
+            }
+            
+            .nav-title {
+                display: block;
+                font-size: 1.2em;
+                line-height: 1.4;
+                color: #333;
+                font-weight: 500;
+            }
+        }
+        
+        &.empty {
+            background-color: transparent;
+        }
+    }
+    
+    &-prev {
+        text-align: left;
+        
+        a .nav-label:before {
+            content: '\2190';
+            margin-right: 0.5em;
+        }
+    }
+    
+    &-next {
+        text-align: right;
+        
+        a .nav-label:after {
+            content: '\2192';
+            margin-left: 0.5em;
+        }
+    }
+}
+
+
 footer {
     position: relative;
     z-index: 100;
