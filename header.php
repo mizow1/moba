@@ -20,6 +20,7 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<div class="inner cf">
+			<?php get_template_part( 'template-parts/sns' ); ?>
 
 			<?php if (is_home() || is_front_page()) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">

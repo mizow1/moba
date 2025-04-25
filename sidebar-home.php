@@ -8,6 +8,7 @@
 
 ?>
 
+<?php if(1==2): //一旦非表示?>
 <aside id="secondary" class="widget-area" role="complementary">
 
 	<div class="columnleft">
@@ -97,3 +98,4 @@
 	</div>
 
 </aside><!-- #secondary -->
+<?php endif; ?>

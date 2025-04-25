@@ -74,6 +74,7 @@ header#masthead .snav.cf {
 header#masthead .inner {
   display: block;
   padding: 0;
+  position: relative;
 }
 header#masthead .inner.cf {
   width: auto;
@@ -262,6 +263,89 @@ header#masthead .inner.cf {
 }
 .pagination .page-numbers.prev, .pagination .page-numbers.next {
   font-weight: bold;
+}
+
+/* ------------------------------------------------------------------
+	2-5. SNS styles
+-------------------------------------------------------------------*/
+.sns_list {
+  font-size: 0;
+  color: #fff;
+}
+
+/* ヘッダー内のSNSリストを右上に配置 */
+header .sns_area {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+/* モバイル表示の調整 */
+@media screen and (max-width: 767px) {
+  header .sns_area {
+    top: 10px;
+    right: 10px;
+  }
+  .sns_item {
+    margin: 5px 5px 0 0;
+  }
+  .sns_item a {
+    font-size: 12px;
+    height: 25px;
+    width: 25px;
+    line-height: 22px;
+  }
+}
+.sns_item {
+  margin: 11px 11px 0 0;
+  display: inline-block;
+}
+
+.sns_item a {
+  border: 1px solid #fff;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  height: 30px;
+  line-height: 27px;
+  text-align: center;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.sns_item i {
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+.sns_item_fb a:hover {
+  background-color: #3B5998;
+  color: #FFF;
+}
+
+.sns_item_tw a:hover {
+  background-color: #33CCFF;
+  color: #FFF;
+}
+
+.sns_item_ig a:hover {
+  background-color: #8E6051;
+  color: #FFF;
+}
+
+/* SNS */
+footer .sns_list {
+  padding: 10px 0;
+}
+
+footer .sns_area {
+  text-align: center;
+}
+
+footer .sns_item a {
+  border: 1px solid #1d1d1d;
+  color: #1d1d1d;
 }
 
 .post-navigation {
