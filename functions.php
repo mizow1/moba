@@ -19,34 +19,8 @@ function allow_svg_uploads($mimes) {
 }
 add_filter('upload_mimes', 'allow_svg_uploads');
 
-// 投稿の名称を「ニュース」に変更する
-function change_post_label() {
-    global $menu;
-    global $submenu;
-    $menu[5][0] = 'ニュース';
-    $submenu['edit.php'][5][0] = 'ニュース一覧';
-    $submenu['edit.php'][10][0] = '新規ニュース追加';
-}
-add_action( 'admin_menu', 'change_post_label' );
 
-// 投稿のラベルを「ニュース」に変更する
-function change_post_object_label() {
-    global $wp_post_types;
-    $labels = &$wp_post_types['post']->labels;
-    $labels->name = 'ニュース';
-    $labels->singular_name = 'ニュース';
-    $labels->add_new = '新規ニュース追加';
-    $labels->add_new_item = '新規ニュース追加';
-    $labels->edit_item = 'ニュースを編集';
-    $labels->new_item = '新規ニュース';
-    $labels->view_item = 'ニュースを表示';
-    $labels->search_items = 'ニュースを検索';
-    $labels->not_found = 'ニュースが見つかりませんでした';
-    $labels->not_found_in_trash = 'ゴミ箱にニュースが見つかりませんでした';
-}
-add_action( 'init', 'change_post_object_label' );
-
-// 管理画面の投稿一覧（ニュース一覧）を公開日降順に並び替える
+// 管理画面の投稿一覧を公開日降順に並び替える
 function set_admin_post_order( $query ) {
     // 管理画面かつメインクエリの場合
     if ( is_admin() && $query->is_main_query() ) {
@@ -178,3 +152,71 @@ function display_post_list($posts_per_page = 4, $category = null, $show_paginati
     endif;
 }
 
+// カテゴリー指定時に「未分類」を自動で外す
+add_action('save_post', function($post_id) {
+    // 投稿タイプと自動保存を除外
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (get_post_type($post_id) !== 'post') return;
+
+    // 現在のカテゴリーIDを取得
+    $cats = wp_get_post_categories($post_id);
+
+    // 「未分類」カテゴリーのIDを取得（通常1だが念のため取得）
+    $uncat_id = get_cat_ID('未分類');
+
+    // 「未分類」以外が1つでも選択されている場合
+    if (in_array($uncat_id, $cats) && count($cats) > 1) {
+        // 「未分類」を外して再セット
+        $new_cats = array_diff($cats, array($uncat_id));
+        wp_set_post_categories($post_id, $new_cats);
+    }
+});
+
+// 投稿の初期URLを日時形式に変更
+// add_action('save_post', function ($post_id) {
+//     // 自動保存やリビジョン時はスキップ
+//     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+//     if (wp_is_post_revision($post_id)) return;
+    
+//     $post = get_post($post_id);
+//     // 投稿タイプがpost以外は除外（必要に応じてカスタマイズ）
+//     if ($post->post_type !== 'post') return;
+
+//     // スラッグが既に意図した形式なら何もしない（無限ループ防止）
+//     if (preg_match('/^\d{8}_\d{6}$/', $post->post_name)) return;
+
+//     // 投稿が「公開状態」になった時のみ
+//     if ($post->post_status === 'publish') {
+//         // 公開日時を取得（未来日時予約公開にも対応）
+//         $date = get_post_time('Ymd_His', true, $post);
+//         // 同じスラッグが存在する場合は被り防止
+//         $slug = $date;
+//         $n = 2;
+//         while (post_exists('', '', '', 'post', $slug) && $post->ID !== $post_id) {
+//             $slug = $date . '-' . $n++;
+//         }
+//         // 投稿のスラッグを更新
+//         remove_action('save_post', __FUNCTION__); // 無限ループ防止
+//         wp_update_post([
+//             'ID' => $post_id,
+//             'post_name' => $slug
+//         ]);
+//         add_action('save_post', __FUNCTION__); // 復帰
+//     }
+// });
+
+// デフォルト投稿URLを日付形式にする
+function auto_set_post_slug( $data, $postarr ) {
+    // 対象となる投稿タイプの配列
+    $target_post_types = array('post', 'news','page');
+    
+    // 対象の投稿タイプかつ、新規投稿または自動生成されたスラッグの場合のみ適用
+    if ( in_array($data['post_type'], $target_post_types) && 
+        empty($data['post_name']) ) {
+        
+        // 日時形式（Y-m-d-H-i-s）でスラッグを設定
+        $data['post_name'] = current_time('Y-m-d-H-i-s');
+    }
+    return $data;
+}
+add_filter( 'wp_insert_post_data', 'auto_set_post_slug', 10, 2 );
