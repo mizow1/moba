@@ -172,38 +172,7 @@ add_action('save_post', function($post_id) {
     }
 });
 
-// 投稿の初期URLを日時形式に変更
-// add_action('save_post', function ($post_id) {
-//     // 自動保存やリビジョン時はスキップ
-//     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-//     if (wp_is_post_revision($post_id)) return;
-    
-//     $post = get_post($post_id);
-//     // 投稿タイプがpost以外は除外（必要に応じてカスタマイズ）
-//     if ($post->post_type !== 'post') return;
 
-//     // スラッグが既に意図した形式なら何もしない（無限ループ防止）
-//     if (preg_match('/^\d{8}_\d{6}$/', $post->post_name)) return;
-
-//     // 投稿が「公開状態」になった時のみ
-//     if ($post->post_status === 'publish') {
-//         // 公開日時を取得（未来日時予約公開にも対応）
-//         $date = get_post_time('Ymd_His', true, $post);
-//         // 同じスラッグが存在する場合は被り防止
-//         $slug = $date;
-//         $n = 2;
-//         while (post_exists('', '', '', 'post', $slug) && $post->ID !== $post_id) {
-//             $slug = $date . '-' . $n++;
-//         }
-//         // 投稿のスラッグを更新
-//         remove_action('save_post', __FUNCTION__); // 無限ループ防止
-//         wp_update_post([
-//             'ID' => $post_id,
-//             'post_name' => $slug
-//         ]);
-//         add_action('save_post', __FUNCTION__); // 復帰
-//     }
-// });
 
 // デフォルト投稿URLを日付形式にする
 function auto_set_post_slug( $data, $postarr ) {
