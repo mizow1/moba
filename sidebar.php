@@ -5,7 +5,7 @@
  * @package Welcart
  * @subpackage Welcart_Basic
  */
-
+echo "<!--";var_dump('templatename:sidebar.php');echo "-->";
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">

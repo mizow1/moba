@@ -5,7 +5,7 @@
  * @package Welcart
  * @subpackage Welcart_Basic
  */
-
+echo "<!--";var_dump('templatename:wc_item_single.php');echo "-->";
 get_header();
 ?>
 
@@ -167,5 +167,5 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

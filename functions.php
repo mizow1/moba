@@ -177,3 +177,4 @@ function display_post_list($posts_per_page = 4, $category = null, $show_paginati
         echo '<p>投稿がありません。</p>';
     endif;
 }
+

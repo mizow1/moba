@@ -6,7 +6,7 @@
  * @package Welcart
  * @subpackage Welcart_Basic
  */
-
+echo "<!--";var_dump('templatename:wc_item_single_data.php');echo "-->";
 get_header();
 ?>
 

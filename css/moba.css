@@ -1,5 +1,6 @@
 @charset "UTF-8";
-html * {
+html,
+body {
   font-family: "Zen Old Mincho", serif;
   font-weight: 400;
   font-style: normal;
@@ -55,7 +56,7 @@ header#masthead .site-description {
 }
 header#masthead .site-title {
   width: 180px;
-  padding: 130px 40px 50px 40px;
+  padding: 0;
   margin: 0 auto;
   text-align: center;
   background: #fff;
@@ -63,10 +64,13 @@ header#masthead .site-title {
 }
 .home header#masthead .site-title {
   width: 240px;
-  padding: 130px 50px 60px 50px;
 }
 header#masthead .site-title a {
   display: block;
+  padding: 80px 40px 50px 40px;
+}
+.home header#masthead .site-title a {
+  padding: 130px 50px 60px 50px;
 }
 header#masthead .snav.cf {
   display: none;
@@ -131,12 +135,14 @@ header#masthead .inner.cf {
 }
 #main .post h1 {
   font-size: 2.5em;
+  font-weight: normal;
   line-height: 1.5;
   margin: 0 auto 2em;
 }
 #main .page h1 {
   text-align: center;
   font-size: 2.5em;
+  font-weight: normal;
   line-height: 1.5;
   margin: 0 auto 2em;
 }
@@ -157,16 +163,23 @@ header#masthead .inner.cf {
   font-size: 2.5em;
   margin: 0 auto;
 }
-#main .main_inner #primary #content article .entry-content h1.wp-block-heading {
+#main .main_inner #primary #content article .entry-content h1 {
   text-align: center;
   font-size: 2.5em;
+  font-weight: normal;
   line-height: 1.5;
   margin: 0 auto 1.5em;
 }
 #main .main_inner #primary #content article .entry-content h2.wp-block-heading {
   font-size: 1.5em;
+  font-weight: normal;
   border: none;
   margin: 0 auto 1em;
+}
+#main .main_inner #primary #content article .entry-content h3.wp-block-heading {
+  margin: 1em 0;
+  font-weight: normal;
+  border: none;
 }
 #main .main_inner #primary #content article .entry-content p {
   line-height: 2;
@@ -190,6 +203,34 @@ header#masthead .inner.cf {
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.item-info .skubutton {
+  background: #000;
+}
+.item-info .skubutton:hover {
+  background: #333;
+}
+
+.send input.to_customerinfo_button, .send input.to_memberlogin_button, .send input.to_deliveryinfo_button, .send input.to_confirm_button, .send input#purchase_button, #point_table td input.use_point_button {
+  background: #000;
+  color: #fff;
+  border: none;
+}
+.send input.to_customerinfo_button:hover, .send input.to_memberlogin_button:hover, .send input.to_deliveryinfo_button:hover, .send input.to_confirm_button:hover, .send input#purchase_button:hover, #point_table td input.use_point_button:hover {
+  background: #333;
+  color: #fff;
+  border: none;
+}
+
+#wc_cart #cart .upbutton input {
+  border: 1px solid #000;
+  color: #000;
+}
+#wc_cart #cart .upbutton input:hover {
+  border: 1px solid #1d86b2;
+  color: #1d86b2;
+  background: none;
 }
 
 .widget_title img {
@@ -322,16 +363,19 @@ header .sns_area {
 .sns_item_fb a:hover {
   background-color: #3B5998;
   color: #FFF;
+  transition: all 0.3s ease;
 }
 
 .sns_item_tw a:hover {
   background-color: #33CCFF;
   color: #FFF;
+  transition: all 0.3s ease;
 }
 
 .sns_item_ig a:hover {
   background-color: #8E6051;
   color: #FFF;
+  transition: all 0.3s ease;
 }
 
 /* SNS */

@@ -5,7 +5,7 @@
  * @package Welcart
  * @subpackage Welcart_Basic
  */
-
+echo "<!--";var_dump('templatename:sidebar-home');echo "-->";
 ?>
 
 <?php if(1==2): //一旦非表示?>
