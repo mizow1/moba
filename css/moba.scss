@@ -261,10 +261,16 @@ header#masthead {
     }
 }
 
-.send input.to_customerinfo_button, .send input.to_memberlogin_button, .send input.to_deliveryinfo_button, .send input.to_confirm_button, .send input#purchase_button,#point_table td input.use_point_button{
+.send input.to_customerinfo_button,
+.send input.to_memberlogin_button,
+.send input.to_deliveryinfo_button,
+.send input.to_confirm_button,
+.send input#purchase_button,
+#point_table td input.use_point_button {
     background: #000;
     color: #fff;
     border: none;
+
     &:hover {
         background: #333;
         color: #fff;
@@ -278,11 +284,12 @@ header#masthead {
             input {
                 border: 1px solid #000;
                 color: #000;
-                &:hover{
+
+                &:hover {
                     border: 1px solid #1d86b2;
                     color: #1d86b2;
                     background: none;
-    
+
                 }
             }
         }
@@ -409,17 +416,24 @@ header .sns_area {
     }
 }
 
+.sns_list {
+    display: flex;
+}
+
 .sns_item {
     margin: 11px 11px 0 0;
-    display: inline-block;
+
 }
 
 .sns_item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #fff;
     color: #fff;
-    display: block;
     font-size: 14px;
     height: 30px;
+    width: 30px;
     line-height: 27px;
     text-align: center;
     -webkit-transform: rotate(-45deg);
@@ -427,7 +441,6 @@ header .sns_area {
     -o-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    width: 30px;
 }
 
 .sns_item i {
@@ -437,6 +450,11 @@ header .sns_area {
     -o-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.sns_item img {
+    transform: rotate(45deg);
+    color: #fff;
 }
 
 .sns_item_fb a:hover {
@@ -456,6 +474,45 @@ header .sns_area {
     color: #FFF;
     transition: all 0.3s ease;
 }
+
+.sns_item_cart {
+    position: relative;
+
+    a {
+        &:hover {
+            background-color: #000;
+            color: #FFF;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cart-count {
+            transform: rotate(45deg);
+            position: absolute;
+            left: 26px;
+            top: 6px;
+            background: #c00;
+            color: #fff;
+            border-radius: 0;
+            font-size: 12px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+        }
+
+        img {
+            width: 60%;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
 
 /* SNS */
 footer .sns_list {
@@ -547,6 +604,7 @@ footer .sns_item a {
         }
     }
 }
+
 .wp-block-gallery {
     position: relative;
     overflow: hidden;
@@ -591,75 +649,78 @@ footer .sns_item a {
         }
     }
 }
+
 // ギャラリーモーダル
 .gallery-modal {
-	display: none;
-	position: fixed;
-	z-index: 1200;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.9);
-	align-items: center;
-	justify-content: center;
+    display: none;
+    position: fixed;
+    z-index: 1200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
 
-	.gallery-modal-content {
-		position: relative;
-		max-width: 90%;
-		max-height: 90%;
-		margin: auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    .gallery-modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.gallery-modal-close {
-		position: absolute;
-		top: -40px;
-		right: 0;
-		color: #f1f1f1;
-		font-size: 40px;
-		font-weight: bold;
-		cursor: pointer;
-		z-index: 1001;
+    .gallery-modal-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
 
-		&:hover {
-			color: #bbb;
-		}
-	}
+        &:hover {
+            color: #bbb;
+        }
+    }
 
-	.gallery-modal-img {
-		max-width: 100%;
-		max-height: 80vh;
-		opacity: 0;
-		transition: opacity 0.3s ease;
-		&.loaded {
-			opacity: 1;
-		}
-	}
+    .gallery-modal-img {
+        max-width: 100%;
+        max-height: 80vh;
+        opacity: 0;
+        transition: opacity 0.3s ease;
 
-	.gallery-modal-caption {
-		margin-top: 20px;
-		color: #fff;
-		text-align: center;
-		padding: 10px;
-		width: 100%;
-	}
+        &.loaded {
+            opacity: 1;
+        }
+    }
+
+    .gallery-modal-caption {
+        margin-top: 20px;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
 }
 
 // ギャラリー関連のスタイル
 .wp-block-gallery,
 .blocks-gallery-grid,
 .gallery {
-	opacity: 0;
-	transition: opacity 0.5s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 
-	&.gallery-loaded {
-		opacity: 1;
-	}
+    &.gallery-loaded {
+        opacity: 1;
+    }
 }
+
 footer {
     position: relative;
     z-index: 100;

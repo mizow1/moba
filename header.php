@@ -35,10 +35,6 @@
 				牛肉の新しい地平。
 			</div>
 
-			<?php if (! welcart_basic_is_cart_page()) : ?>
-
-
-			<?php endif; ?>
 
 		</div><!-- .inner -->
 

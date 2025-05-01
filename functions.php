@@ -3,12 +3,18 @@
  * Moba functions and definitions
  */
 
-// 子テーマ用のスタイルシートを読み込む
+// wordpress管理ログインのWordPressアイコン削除
+add_action( 'admin_bar_menu', function( $wp_admin_bar ) {
+    $wp_admin_bar->remove_node('wp-logo');
+}, 999 );
+
+ // 子テーマ用のスタイルシートを読み込む
 function moba_enqueue_styles() {
     wp_enqueue_style('moba-style', get_stylesheet_directory_uri() . '/css/moba.css', array(), '1.0');
     wp_enqueue_script('moba-gallery', get_stylesheet_directory_uri() . '/js/gallery.js', array('jquery'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'moba_enqueue_styles', 20);
+
 
 
 //svgアップロード可能にする

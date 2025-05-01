@@ -212,12 +212,22 @@ header#masthead .inner.cf {
   background: #333;
 }
 
-.send input.to_customerinfo_button, .send input.to_memberlogin_button, .send input.to_deliveryinfo_button, .send input.to_confirm_button, .send input#purchase_button, #point_table td input.use_point_button {
+.send input.to_customerinfo_button,
+.send input.to_memberlogin_button,
+.send input.to_deliveryinfo_button,
+.send input.to_confirm_button,
+.send input#purchase_button,
+#point_table td input.use_point_button {
   background: #000;
   color: #fff;
   border: none;
 }
-.send input.to_customerinfo_button:hover, .send input.to_memberlogin_button:hover, .send input.to_deliveryinfo_button:hover, .send input.to_confirm_button:hover, .send input#purchase_button:hover, #point_table td input.use_point_button:hover {
+.send input.to_customerinfo_button:hover,
+.send input.to_memberlogin_button:hover,
+.send input.to_deliveryinfo_button:hover,
+.send input.to_confirm_button:hover,
+.send input#purchase_button:hover,
+#point_table td input.use_point_button:hover {
   background: #333;
   color: #fff;
   border: none;
@@ -338,26 +348,36 @@ header .sns_area {
     line-height: 22px;
   }
 }
+.sns_list {
+  display: flex;
+}
+
 .sns_item {
   margin: 11px 11px 0 0;
-  display: inline-block;
 }
 
 .sns_item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #fff;
   color: #fff;
-  display: block;
   font-size: 14px;
   height: 30px;
+  width: 30px;
   line-height: 27px;
   text-align: center;
   transform: rotate(-45deg);
-  width: 30px;
 }
 
 .sns_item i {
   color: #fff;
   transform: rotate(45deg);
+}
+
+.sns_item img {
+  transform: rotate(45deg);
+  color: #fff;
 }
 
 .sns_item_fb a:hover {
@@ -376,6 +396,39 @@ header .sns_area {
   background-color: #8E6051;
   color: #FFF;
   transition: all 0.3s ease;
+}
+
+.sns_item_cart {
+  position: relative;
+}
+.sns_item_cart a:hover {
+  background-color: #000;
+  color: #FFF;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.sns_item_cart a .cart-count {
+  transform: rotate(45deg);
+  position: absolute;
+  left: 26px;
+  top: 6px;
+  background: #c00;
+  color: #fff;
+  border-radius: 0;
+  font-size: 12px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+.sns_item_cart a img {
+  width: 60%;
+}
+.sns_item_cart a img:hover {
+  opacity: 1;
 }
 
 /* SNS */
