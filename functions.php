@@ -188,3 +188,37 @@ function auto_set_post_slug( $data, $postarr ) {
     return $data;
 }
 add_filter( 'wp_insert_post_data', 'auto_set_post_slug', 10, 2 );
+
+
+
+//郵便番号
+function my_example_zipcode() {
+    return '1000001';
+    }
+    add_filter('usces_filter_after_zipcode', 'my_example_zipcode');
+    //市区郡町村
+    function my_example_address1() {
+    return '東京都千代田区千代田';
+    }
+    add_filter('usces_filter_after_address1', 'my_example_address1');
+    //番地
+    function my_example_address2() {
+    return '1-1';
+    }
+    add_filter('usces_filter_after_address2', 'my_example_address2');
+    //ビル名
+    function my_example_address3() {
+    return 'セントラルビル1F';
+    }
+    add_filter('usces_filter_after_address3', 'my_example_address3');
+    //電話番号
+    function my_example_tel() {
+    return '03-1234-5678';
+    }
+    add_filter('usces_filter_after_tel', 'my_example_tel');
+    //FAX番号
+    function my_example_fax() {
+    return '03-1234-5678';
+    }
+    add_filter('usces_filter_after_fax', 'my_example_fax');
+    
