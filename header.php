@@ -5,6 +5,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="format-detection" content="telephone=no" />
+	<title><?php moba_custom_title_tag(); ?></title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&family=Zen+Old+Mincho&display=swap" rel="stylesheet">

@@ -66,7 +66,13 @@ get_header();
 						<h3><?php esc_html_e( 'Purchase history', 'usces' ); ?></h3>
 						<div class="currency_code"><?php esc_html_e( 'Currency', 'usces' ); ?> : <?php usces_crcode(); ?></div>
 
-						<?php usces_member_history(); ?>
+						<?php
+// デフォルトで全期間を選択
+if (!isset($_REQUEST['search_period'])) {
+    $_REQUEST['search_period'] = 'all';
+}
+usces_member_history();
+?>
 
 						<h3><a name="edit"></a><?php esc_html_e( 'Member information editing', 'usces' ); ?></h3>
 						<div class="error_message"><?php usces_error_message(); ?></div>

@@ -720,7 +720,10 @@ footer .sns_item a {
         opacity: 1;
     }
 }
-
+#memberinfo .history-area{
+    max-height: none;
+    overflow: visible;
+}
 footer {
     position: relative;
     z-index: 100;

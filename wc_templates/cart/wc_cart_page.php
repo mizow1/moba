@@ -19,7 +19,7 @@ get_header();
 
 			<article class="post" id="wc_<?php usces_page_name(); ?>">
 
-				<h1 class="cart_page_title"><?php esc_html_e( 'In the cart', 'usces' ); ?></h1>
+				<h1 class="cart_page_title">検討中の商品</h1>
 
 				<div class="cart_navi">
 					<ul>
