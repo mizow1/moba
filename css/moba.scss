@@ -547,8 +547,120 @@ footer .sns_item a {
         }
     }
 }
+.wp-block-gallery {
+    position: relative;
+    overflow: hidden;
+    margin: 2em 0;
 
+    .blocks-gallery-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        width: 100%;
+        padding: 10px 0;
 
+        .blocks-gallery-item {
+            flex: 0 0 auto;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            figure {
+                margin: 0;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+
+                figcaption {
+                    padding: 8px;
+                    font-size: 0.85em;
+                    line-height: 1.4;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+// ギャラリーモーダル
+.gallery-modal {
+	display: none;
+	position: fixed;
+	z-index: 1200;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.9);
+	align-items: center;
+	justify-content: center;
+
+	.gallery-modal-content {
+		position: relative;
+		max-width: 90%;
+		max-height: 90%;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.gallery-modal-close {
+		position: absolute;
+		top: -40px;
+		right: 0;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		cursor: pointer;
+		z-index: 1001;
+
+		&:hover {
+			color: #bbb;
+		}
+	}
+
+	.gallery-modal-img {
+		max-width: 100%;
+		max-height: 80vh;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+
+		&.loaded {
+			opacity: 1;
+		}
+	}
+
+	.gallery-modal-caption {
+		margin-top: 20px;
+		color: #fff;
+		text-align: center;
+		padding: 10px;
+		width: 100%;
+	}
+}
+
+// ギャラリー関連のスタイル
+.wp-block-gallery,
+.blocks-gallery-grid,
+.gallery {
+	opacity: 0;
+	transition: opacity 0.5s ease;
+
+	&.gallery-loaded {
+		opacity: 1;
+	}
+}
 footer {
     position: relative;
     z-index: 100;

@@ -456,6 +456,110 @@ footer .sns_item a {
   margin-left: 0.5em;
 }
 
+.wp-block-gallery {
+  position: relative;
+  overflow: hidden;
+  margin: 2em 0;
+}
+.wp-block-gallery .blocks-gallery-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+}
+.wp-block-gallery .blocks-gallery-grid .blocks-gallery-item {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.wp-block-gallery .blocks-gallery-grid .blocks-gallery-item:hover {
+  transform: scale(1.05);
+}
+.wp-block-gallery .blocks-gallery-grid .blocks-gallery-item figure {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.wp-block-gallery .blocks-gallery-grid .blocks-gallery-item figure img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-gallery .blocks-gallery-grid .blocks-gallery-item figure figcaption {
+  padding: 8px;
+  font-size: 0.85em;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 1200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+}
+.gallery-modal .gallery-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery-modal .gallery-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+.gallery-modal .gallery-modal-close:hover {
+  color: #bbb;
+}
+.gallery-modal .gallery-modal-img {
+  max-width: 100%;
+  max-height: 80vh;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-modal .gallery-modal-img.loaded {
+  opacity: 1;
+}
+.gallery-modal .gallery-modal-caption {
+  margin-top: 20px;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.wp-block-gallery,
+.blocks-gallery-grid,
+.gallery {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.wp-block-gallery.gallery-loaded,
+.blocks-gallery-grid.gallery-loaded,
+.gallery.gallery-loaded {
+  opacity: 1;
+}
+
 footer {
   position: relative;
   z-index: 100;

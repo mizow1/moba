@@ -5,9 +5,8 @@
 
 // 子テーマ用のスタイルシートを読み込む
 function moba_enqueue_styles() {
-    // 親テーマのスタイルはstyle.cssで@importされているので、
-    // ここではmoba.cssのみを読み込む
     wp_enqueue_style('moba-style', get_stylesheet_directory_uri() . '/css/moba.css', array(), '1.0');
+    wp_enqueue_script('moba-gallery', get_stylesheet_directory_uri() . '/js/gallery.js', array('jquery'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'moba_enqueue_styles', 20);
 
