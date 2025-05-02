@@ -60,7 +60,6 @@ function applyFlexRatios() {
 function applyGaps() {
     // gap_クラスを持つ要素をすべて取得
     const gapGroups = document.querySelectorAll('.wp-block-group[class*="gap_"]');
-    console.log('63js',gapGroups);
     // 各要素に対して処理を実行
     gapGroups.forEach(function(group) {
         // クラス名からgap_クラスを抽出

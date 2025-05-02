@@ -8,6 +8,10 @@ body {
   color: #000;
 }
 
+a {
+  color: #000;
+}
+
 .header_bg {
   min-width: 980px;
   position: fixed;
@@ -188,11 +192,14 @@ header#masthead .inner.cf {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 1em;
 }
 #main .main_inner #primary #content .item-list-container .item-list .item-box {
-  gap: 1em;
   flex: 1;
-  max-width: 20%;
+  max-width: 50%;
+}
+#main .main_inner #primary #content .item-list-container .item-list .item-box a {
+  text-decoration: none;
 }
 #main .main_inner #primary #content .item-list-container .item-list .item-box .itemimg {
   position: relative;
@@ -203,6 +210,28 @@ header#masthead .inner.cf {
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
+}
+#main .main_inner #primary #content .item-list-container .item-list .item-box .item-info-wrap {
+  padding: 1em 0;
+}
+#main .main_inner #primary #content .item-list-container .item-list .item-box .item-info-wrap .itemprice {
+  text-align: right;
+}
+#main .main_inner #primary #content .item-list-container .item-list .item-box .item-info-wrap .itemprice .tax {
+  font-size: 0.8em;
+  color: #000;
+}
+#main .main_inner #primary.item_single #content .item-list-container .item-list .item-box {
+  max-width: 10%;
+}
+#main .main_inner #primary.item_single #content .item-list-container .item-list .item-box .item-info-wrap {
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+#main .main_inner .recommend_item {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 5em 0 1em;
 }
 
 .item-info .skubutton {
@@ -616,6 +645,12 @@ footer .sns_item a {
 #memberinfo .history-area {
   max-height: none;
   overflow: visible;
+}
+#memberinfo .history-area #history_head {
+  margin-bottom: 0;
+}
+#memberinfo .history-area #history_head th, #memberinfo .history-area #history_head td {
+  border-bottom: none;
 }
 
 footer {

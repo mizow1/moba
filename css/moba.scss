@@ -7,7 +7,9 @@ body {
     color: #000;
 
 }
-
+a{
+    color: #000;
+}
 .header_bg {
     min-width: 980px;
     position: fixed;
@@ -227,12 +229,14 @@ header#masthead {
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: flex-start;
+                        gap: 1em;
 
                         .item-box {
-                            gap: 1em;
                             flex: 1;
-                            max-width: 20%;
-
+                            max-width: 50%;
+                            a{
+                                text-decoration: none;
+                            }
                             .itemimg {
                                 position: relative;
 
@@ -243,10 +247,37 @@ header#masthead {
                                     object-fit: cover;
                                 }
                             }
+                            .item-info-wrap{
+                                padding: 1em 0;
+                                .itemprice{
+                                    text-align: right;
+                                    .tax{
+                                        font-size: 0.8em;
+                                        color: #000;
+                                    }
+                                }
+
+                            }
                         }
                     }
+
                 }
             }
+        }
+
+        //商品詳細ページのその他商品
+        #primary.item_single #content .item-list-container .item-list .item-box{
+            max-width: 10%;
+            .item-info-wrap{
+                font-size: .8em;
+                line-height: 1.5;
+            }
+        }
+        .recommend_item{
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 5em 0 1em;
+            
         }
     }
 }
@@ -723,6 +754,13 @@ footer .sns_item a {
 #memberinfo .history-area{
     max-height: none;
     overflow: visible;
+    #history_head{
+        margin-bottom: 0;
+        th,td{
+            border-bottom: none;
+        }
+    }
+
 }
 footer {
     position: relative;
