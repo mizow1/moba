@@ -1,8 +1,8 @@
 $breakpoints: (
-	'sm': 'screen and (min-width: 640px)',
-	'md': 'screen and (min-width: 768px)',
-	'lg': 'screen and (min-width: 992px)',
-	'xl': 'screen and (min-width: 1200px)',
+	'sm': 'screen and (max-width: 640px)',
+	'md': 'screen and (max-width: 768px)',
+	'lg': 'screen and (max-width: 992px)',
+	'xl': 'screen and (max-width: 1200px)',
 ) !default;
 
 @mixin media($breakpoint) {
@@ -73,6 +73,10 @@ header#masthead {
 		.home & {
 			font-size: 3em;
 			font-weight: normal;
+			@include media(sm) {
+				font-size: 1.7em;
+			}
+
 		}
 	}
 
@@ -83,22 +87,26 @@ header#masthead {
 		text-align: center;
 		background: #fff;
 		float: none;
-		@include media(sm) {
-
-		}
 		
 		.home & {
 			width: 240px;
-
+			@include media(sm) {
+				width: 40%;
+				margin-top: 30%;
+			}
+	
 		}
 
 		a {
 			display: block;
 			padding: 80px 40px 50px 40px;
-			;
 
 			.home & {
-				padding: 130px 50px 60px 50px
+				padding: 130px 50px 60px 50px;
+				@include media(sm) {
+					padding: 30% 20%;
+				}
+	
 			}
 
 		}
@@ -255,6 +263,21 @@ header#masthead {
 						p {
 							line-height: 2;
 						}
+
+						.wp-block-group{
+							margin: 0;
+							&:not(:first-child) {
+								margin: 2em 0;
+							}
+						
+							@include media(sm) {
+								flex-direction: column;
+								.wp-block-image{
+									width: 100%;
+								}
+							}
+						
+						}
 					}
 				}
 
@@ -315,7 +338,6 @@ header#masthead {
 		}
 	}
 }
-
 .item-info {
 	.skubutton {
 		background: #000;
@@ -394,6 +416,81 @@ header#masthead {
 			line-height: 1.4;
 		}
 	}
+}
+
+// ここにSP用のスタイルを追加する
+
+// ハンバーガーメニューアイコン
+.hamburger {
+  display: none;
+  @include media(sm) {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1300;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 5px 0 0;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  &.is-active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  &.is-active span:nth-child(2) { opacity: 0; }
+  &.is-active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+}
+
+// SPナビゲーション
+@include media(sm) {
+  #site-navigation {
+    display: flex;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    z-index: 1200;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .header-nav-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        a {
+          color: #fff;
+          font-size: 1.4em;
+          text-decoration: none;
+          display: block;
+          padding: 1em 0;
+        }
+      }
+    }
+  }
 }
 
 /* ページネーションのスタイル */
@@ -770,12 +867,8 @@ footer .sns_item a {
 		margin-top: 20px;
 		color: #fff;
 		text-align: center;
-		padding: 10px;
-		width: 100%;
 	}
 }
-
-// ギャラリー関連のスタイル
 .wp-block-gallery,
 .blocks-gallery-grid,
 .gallery {

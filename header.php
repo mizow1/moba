@@ -32,7 +32,12 @@
 	<?php wp_body_open(); ?>
 
 	<div class="header_bg"></div>
-	<header id="masthead" class="site-header" role="banner">
+	<button class="hamburger" aria-label="メニューを開く/閉じる" aria-controls="site-navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+<header id="masthead" class="site-header" role="banner">
 
 		<div class="inner cf">
 			<?php get_template_part( 'template-parts/sns' ); ?>
@@ -61,8 +66,7 @@
 	<?php if (! welcart_basic_is_cart_page()) : ?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<input type="checkbox" id="panel" class="on-off" />
-			<?php
+						<?php
 			wp_nav_menu(
 				array(
 					'theme_location'  => 'header',
