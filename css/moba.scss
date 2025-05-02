@@ -9,6 +9,10 @@ body {
 }
 a{
     color: #000;
+    font-weight: normal;
+    &:hover{
+        text-decoration: none;
+    }
 }
 .header_bg {
     min-width: 980px;
@@ -56,6 +60,7 @@ header#masthead {
 
         .home & {
             font-size: 3em;
+            font-weight: normal;
         }
     }
 
@@ -105,9 +110,9 @@ header#masthead {
     background: #1d1d1d;
 
     .header-nav-container {
-
+        padding: 0;
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
 
@@ -132,11 +137,13 @@ header#masthead {
 
             a {
                 padding: 1.5em;
+                margin: 0;
                 font-size: .8em;
                 display: block;
                 text-align: center;
                 color: #fff;
                 font-family: sans-serif;
+                border: none;
 
                 &:hover {
                     background-color: transparent;

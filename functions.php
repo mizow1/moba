@@ -23,16 +23,17 @@ add_action('wp_enqueue_scripts', 'moba_enqueue_styles', 20);
 // タイトルタグ出力用関数
 function moba_custom_title_tag()
 {
-    if (is_singular()) {
-        echo trim(wp_title('', false)); // 投稿・固定ページ
-        if (get_bloginfo('name')) {
-            echo ' | ' . get_bloginfo('name');
-        }
-    } elseif (is_home() || is_front_page()) {
+    if (is_home() || is_front_page()) {
         echo get_bloginfo('name');
         if (get_bloginfo('description')) {
             echo ' | ' . get_bloginfo('description');
         }
+    } elseif (is_singular()) {
+        echo trim(wp_title('', false)); // 投稿・固定ページ
+        if (get_bloginfo('name')) {
+            echo ' | ' . get_bloginfo('name');
+        }
+
     } elseif (is_category() || is_tag() || is_archive()) {
         echo trim(wp_title('', false)) . ' | ' . get_bloginfo('name');
     } elseif (is_search()) {

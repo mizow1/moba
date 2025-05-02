@@ -10,6 +10,10 @@ body {
 
 a {
   color: #000;
+  font-weight: normal;
+}
+a:hover {
+  text-decoration: none;
 }
 
 .header_bg {
@@ -57,6 +61,7 @@ header#masthead .site-description {
 }
 .home header#masthead .site-description {
   font-size: 3em;
+  font-weight: normal;
 }
 header#masthead .site-title {
   width: 180px;
@@ -94,8 +99,9 @@ header#masthead .inner.cf {
   background: #1d1d1d;
 }
 #site-navigation .header-nav-container {
+  padding: 0;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -117,11 +123,13 @@ header#masthead .inner.cf {
 }
 #site-navigation .header-nav-container li a {
   padding: 1.5em;
+  margin: 0;
   font-size: 0.8em;
   display: block;
   text-align: center;
   color: #fff;
   font-family: sans-serif;
+  border: none;
 }
 #site-navigation .header-nav-container li a:hover {
   background-color: transparent;

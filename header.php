@@ -47,7 +47,6 @@
 	<?php if (! welcart_basic_is_cart_page()) : ?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<label for="panel"><span></span></label>
 			<input type="checkbox" id="panel" class="on-off" />
 			<?php
 			wp_nav_menu(
