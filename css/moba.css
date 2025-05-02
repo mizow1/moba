@@ -236,6 +236,10 @@ header#masthead .inner.cf {
   #main .main_inner #primary #content article .entry-content .wp-block-group .wp-block-image {
     width: 100%;
   }
+  #main .main_inner #primary #content article .entry-content .wp-block-group .wp-block-image.top_caption_logo {
+    width: 40%;
+    margin: 1em 0;
+  }
 }
 #main .main_inner #primary #content .item-list-container .item-list {
   display: flex;
