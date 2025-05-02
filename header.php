@@ -2,6 +2,18 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+<style>
+.fixed-header-nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    background: rgba(29, 29, 29, 0.85);
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+</style>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="format-detection" content="telephone=no" />
@@ -11,6 +23,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
 	<script src="<?php echo esc_url(get_stylesheet_directory_uri('/')); ?>/js/flex_ratio.js"></script>
 	<?php wp_head(); ?>
+<script src="<?php echo esc_url(get_stylesheet_directory_uri('/')); ?>/js/header.js"></script>
+
 </head>
 
 <body <?php body_class(); ?>>

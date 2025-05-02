@@ -97,6 +97,17 @@ header#masthead .inner.cf {
   position: relative;
   z-index: 100;
   background: #1d1d1d;
+  width: 100%;
+}
+#site-navigation.fixed-site-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  background: rgba(29, 29, 29, 0.85);
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 #site-navigation .header-nav-container {
   padding: 0;
