@@ -410,6 +410,16 @@ header#masthead {
 
 		.post-categories {
 			flex: 1;
+			span{
+				display: block;
+				width: fit-content;
+				background: #000;
+				color: #fff;
+				padding: .5em;
+				border-radius: 5px;
+				font-size: .8em;
+				line-height: 1;
+			}
 		}
 
 		.post-title {

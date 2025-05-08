@@ -346,6 +346,17 @@ header#masthead .inner.cf {
 .post-list .post-item .post-categories {
   flex: 1;
 }
+.post-list .post-item .post-categories span {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #000;
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 5px;
+  font-size: 0.8em;
+  line-height: 1;
+}
 .post-list .post-item .post-title {
   flex: 8;
   border: none;
