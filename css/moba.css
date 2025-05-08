@@ -357,6 +357,10 @@ header#masthead .inner.cf {
   font-size: 0.8em;
   line-height: 1;
 }
+.post-list .post-item .post-categories span a {
+  color: #fff;
+  text-decoration: none;
+}
 .post-list .post-item .post-title {
   flex: 8;
   border: none;

@@ -148,8 +148,9 @@ function display_post_list($posts_per_page = 4, $category = null, $show_paginati
             if (!empty($categories)) {
                 echo '<div class="post-categories">';
                 foreach ($categories as $category) {
-                    echo '<span class="category-' . $category->slug . '">' . $category->name . '</span>';
-                }
+    $cat_link = get_category_link($category->term_id);
+    echo '<span class="category-' . esc_attr($category->slug) . '"><a href="' . esc_url($cat_link) . '">' . esc_html($category->name) . '</a></span>';
+}
                 echo '</div>';
             }
 
