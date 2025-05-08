@@ -24,23 +24,23 @@ get_header(); ?>
             <ul class="column-list">
             <?php while ( $column_query->have_posts() ) : $column_query->the_post(); ?>
                 <li class="column-item">
+                <a href="<?php the_permalink(); ?>">
                     <?php if ( has_post_thumbnail() ) : ?>
                         <a href="<?php the_permalink(); ?>" class="column-thumb">
                             <?php the_post_thumbnail('thumbnail'); ?>
                         </a>
                     <?php endif; ?>
                     <div class="column-entry">
-                        <h2 class="column-title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h2>
                         <div class="column-meta">
                             <time datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
                         </div>
-                        <div class="column-excerpt">
-                            <?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?>
-                        </div>
+                        <h2 class="column-title">
+                            <?php the_title(); ?>
+                        </h2>
+
                     </div>
                 </li>
+                </a>
             <?php endwhile; ?>
             </ul>
 
