@@ -140,19 +140,19 @@ function display_post_list($posts_per_page = 4, $category = null, $show_paginati
             }
 
 
-            // 投稿日
+            // 日付とカテゴリーを1行にまとめて表示
+            echo '<div class="meta-row">';
             echo '<div class="post-date">' . get_the_date() . '</div>';
-
-            // カテゴリー
             $categories = get_the_category();
             if (!empty($categories)) {
                 echo '<div class="post-categories">';
                 foreach ($categories as $category) {
-    $cat_link = get_category_link($category->term_id);
-    echo '<span class="category-' . esc_attr($category->slug) . '"><a href="' . esc_url($cat_link) . '">' . esc_html($category->name) . '</a></span>';
-}
+                    $cat_link = get_category_link($category->term_id);
+                    echo '<span class="category-' . esc_attr($category->slug) . '"><a href="' . esc_url($cat_link) . '">' . esc_html($category->name) . '</a></span>';
+                }
                 echo '</div>';
             }
+            echo '</div>'; // .meta-row
 
             // タイトル
             echo '<h3 class="post-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';

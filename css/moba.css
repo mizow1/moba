@@ -339,12 +339,20 @@ header#masthead .inner.cf {
   margin-bottom: 0.8em;
   padding-bottom: 0.8em;
   border-bottom: 1px solid #eee;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.post-list .post-item .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 .post-list .post-item .post-date {
-  flex: 1;
+  font-size: 0.9em;
+  color: #888;
 }
 .post-list .post-item .post-categories {
-  flex: 1;
+  padding: 0 0.5em;
 }
 .post-list .post-item .post-categories span {
   display: block;
@@ -362,11 +370,33 @@ header#masthead .inner.cf {
   text-decoration: none;
 }
 .post-list .post-item .post-title {
-  flex: 8;
+  flex: 1;
   border: none;
   margin: 0;
   font-size: 1em;
   line-height: 1.4;
+}
+@media screen and (max-width: 640px) {
+  .post-list .post-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.2em;
+  }
+  .post-list .post-item .meta-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.1em;
+  }
+  .post-list .post-item .post-title {
+    margin-top: 0.1em;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .column-list {
