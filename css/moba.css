@@ -881,8 +881,15 @@ footer .sns_item a {
 #memberinfo .history-area #history_head {
   margin-bottom: 0;
 }
-#memberinfo .history-area #history_head th, #memberinfo .history-area #history_head td {
+#memberinfo .history-area #history_head th,
+#memberinfo .history-area #history_head td {
   border-bottom: none;
+}
+#memberinfo .history-area #history_head .historyrow.used_point,
+#memberinfo .history-area #history_head .rightnum.used_point,
+#memberinfo .history-area #history_head .historyrow.get_point,
+#memberinfo .history-area #history_head .rightnum.get_point {
+  display: none;
 }
 
 footer {
