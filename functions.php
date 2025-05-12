@@ -259,13 +259,13 @@ add_filter('usces_filter_after_address3', 'my_example_address3');
 //電話番号
 function my_example_tel()
 {
-    return '03-1234-5678';
+    return '09011112222（ハイフン不要）';
 }
 add_filter('usces_filter_after_tel', 'my_example_tel');
 //FAX番号
 function my_example_fax()
 {
-    return '03-1234-5678';
+    return '0312345678（ハイフン不要）';
 }
 add_filter('usces_filter_after_fax', 'my_example_fax');
 
@@ -276,3 +276,15 @@ function my_change_order_history_period( $purdate ) {
     // 'd_30'（過去30日）が既定、'd_60'→直近60日、''→全期間
     return '';
 }
+
+
+// 受注ステータス
+function custom_management_status($management_status) {
+    // 任意のキーと値でステータスを追加可能
+    $management_status['kouseimati'] = '校正待ち';
+    $management_status['insatsutyuu'] = '印刷中';
+    return $management_status;
+}
+
+
+add_filter('usces_filter_management_status', 'custom_management_status');

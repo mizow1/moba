@@ -1036,6 +1036,26 @@ footer .sns_item a {
 	}
 }
 
+#wc_login {
+	.loginbox {
+		#member_login {
+			background: #000;
+		}
+		.new-entry #nav a{
+			background: #000;
+		}
+	}
+}
+#wc_member {
+	.loginbox {
+		#member_login {}
+	}
+	.new-entry #nav a{
+		background: #000;
+	}
+}
+
+
 #memberinfo .history-area {
 	max-height: none;
 	overflow: visible;
@@ -1047,7 +1067,7 @@ footer .sns_item a {
 		td {
 			border-bottom: none;
 		}
-		
+
 		.historyrow.used_point,
 		.rightnum.used_point,
 		.historyrow.get_point,
