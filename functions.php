@@ -97,7 +97,15 @@ function display_post_list($posts_per_page = 4, $category = null, $show_paginati
 
     // カテゴリーが指定されている場合は追加
     if ($category) {
-        $args['cat'] = $category;
+        // スラッグが渡された場合はIDに変換
+        if (is_string($category) && !is_numeric($category)) {
+            $cat_obj = get_category_by_slug($category);
+            if ($cat_obj) {
+                $args['cat'] = $cat_obj->term_id;
+            }
+        } else {
+            $args['cat'] = $category;
+        }
     }
 
     // Welcart商品を除外
