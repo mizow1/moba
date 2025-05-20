@@ -903,6 +903,45 @@ footer .sns_item a {
   display: none;
 }
 
+.contact_001 {
+  padding: 50px;
+  border: solid 1px #e4e4e4;
+  border-radius: 10px;
+}
+.contact_001 input[type=text], .contact_001 input[type=email], .contact_001 input[type=url], .contact_001 input[type=tel], .contact_001 input[type=number], .contact_001 input[type=date], .contact_001 input[type=search], .contact_001 input[type=password], .contact_001 textarea {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: none;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: #fafafa;
+  resize: none;
+}
+.contact_001 input[type=reset], .contact_001 input[type=button], .contact_001 input[type=submit] {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  background-color: #ff3838;
+  border-radius: 5px;
+  border: 0 none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+}
+.contact_001 br {
+  display: none;
+}
+
 footer {
   position: relative;
   z-index: 100;

@@ -1078,7 +1078,52 @@ footer .sns_item a {
 }
 
 
-
+.contact_001{
+	padding: 50px;
+    border: solid 1px #e4e4e4;
+    border-radius: 10px;
+	input[type="text"], input[type="email"], input[type="url"], input[type="tel"], input[type="number"], input[type="date"], input[type="search"], input[type="password"], textarea {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-webkit-appearance: none;
+		padding: 10px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		width: 100%;
+		margin-bottom: 30px;
+		background-color: #fafafa;
+		resize: none;
+	}
+	input[type="reset"], input[type="button"], input[type="submit"] {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-webkit-appearance: none;
+		-webkit-appearance: none;
+		background-color: #ff3838;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		border: 0 none;
+		color: #fff;
+		cursor: pointer;
+		display: block;
+		padding: 10px 20px;
+		text-align: center;
+		text-transform: uppercase;
+		-ms-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-webkit-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+	}
+	br{
+		display: none;
+	}
+}
 
 footer {
 	position: relative;
