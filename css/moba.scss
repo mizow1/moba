@@ -831,21 +831,147 @@ header .sns_area {
 	}
 }
 
+/* --------------------------
+   フッターSNSエリア
+---------------------------*/
+footer {
+	position: relative;
+	background: #fff;
+	color: #000;
+	z-index: 200;
 
-/* SNS */
-footer .sns_list {
-	padding: 10px 0;
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 960px;
+		margin: 0 auto;
+
+		a {
+			color: #000;
+		}
+
+		.footer_logo {
+			width: 20%;
+			margin-right: 2em;
+		}
+
+		nav {
+			width: auto;
+			flex: 1;
+			.footer-menu {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1em;
+				&.cf::before{
+					content: none;
+				}
+
+				.menu-item {
+					float: none;	
+					margin: 0;
+					padding: 0;
+
+					&:hover,a:hover{
+						color: #f00;
+						transition: .3s;
+					}
+
+				}
+			}
+		}
+
+		.sns_list {
+			padding: 10px 0;
+			display: flex;
+			font-size: 0;
+			color: #fff;
+		}
+
+		.sns_area {
+			width: 100%;
+			text-align: center;
+			.sns_list {
+				justify-content: center;
+			}
+		}
+
+		.sns_item {
+			margin: 11px 11px 0 0;
+
+			& a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 1px solid #1d1d1d;
+				color: #1d1d1d;
+				font-size: 14px;
+				height: 30px;
+				width: 30px;
+				line-height: 27px;
+				text-align: center;
+				transition: all 0.3s ease;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+
+				&:hover {
+					background-color: #f1f0f0;
+					color: #333;
+				}
+			}
+
+			& i {
+				color: #1d1d1d;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+
+			& img {
+				transform: rotate(45deg);
+				color: #1d1d1d;
+			}
+		}
+
+		.sns_item_fb a:hover {
+			background-color: #3B5998;
+			color: #FFF;
+		}
+
+		.sns_item_tw a:hover {
+			background-color: #33CCFF;
+			color: #FFF;
+		}
+
+		.sns_item_ig a:hover {
+			background-color: #8E6051;
+			color: #FFF;
+		}
+	}
 }
 
-footer .sns_area {
-	text-align: center;
-}
+// モバイル表示の調整
+@media screen and (max-width: 767px) {
+	footer .sns_area {
+		top: 10px;
+		right: 10px;
+	}
 
-footer .sns_item a {
-	border: 1px solid #1d1d1d;
-	color: #1d1d1d;
-}
+	footer .sns_item {
+		margin: 5px 5px 0 0;
+	}
 
+	footer .sns_item a {
+		font-size: 12px;
+		height: 25px;
+		width: 25px;
+		line-height: 22px;
+	}
+}
 
 .post-navigation {
 	display: flex;
@@ -1041,16 +1167,19 @@ footer .sns_item a {
 		#member_login {
 			background: #000;
 		}
-		.new-entry #nav a{
+
+		.new-entry #nav a {
 			background: #000;
 		}
 	}
 }
+
 #wc_member {
 	.loginbox {
 		#member_login {}
 	}
-	.new-entry #nav a{
+
+	.new-entry #nav a {
 		background: #000;
 	}
 }
@@ -1078,11 +1207,20 @@ footer .sns_item a {
 }
 
 
-.contact_001{
+.contact_001 {
 	padding: 50px;
-    border: solid 1px #e4e4e4;
-    border-radius: 10px;
-	input[type="text"], input[type="email"], input[type="url"], input[type="tel"], input[type="number"], input[type="date"], input[type="search"], input[type="password"], textarea {
+	border: solid 1px #e4e4e4;
+	border-radius: 10px;
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="date"],
+	input[type="search"],
+	input[type="password"],
+	textarea {
 		box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
@@ -1097,12 +1235,15 @@ footer .sns_item a {
 		background-color: #fafafa;
 		resize: none;
 	}
-	input[type="reset"], input[type="button"], input[type="submit"] {
+
+	input[type="reset"],
+	input[type="button"],
+	input[type="submit"] {
 		box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		-webkit-appearance: none;
-		-webkit-appearance: none;
+		appearance: none;
 		background-color: #ff3838;
 		-webkit-border-radius: 5px;
 		-moz-border-radius: 5px;
@@ -1120,12 +1261,8 @@ footer .sns_item a {
 		-o-transition: all 0.3s ease-out;
 		transition: all 0.3s ease-out;
 	}
-	br{
+
+	br {
 		display: none;
 	}
-}
-
-footer {
-	position: relative;
-	z-index: 100;
 }

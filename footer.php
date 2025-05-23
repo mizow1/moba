@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Footer Template
  *
@@ -8,17 +9,20 @@
 
 ?>
 
-	</div><!-- .main_inner -->
-	</div><!-- #main -->
+</div><!-- .main_inner -->
+</div><!-- #main -->
 
-	<?php if ( ! wp_is_mobile() ) : ?>
+<?php if (! wp_is_mobile()) : ?>
 
 	<div id="toTop" class="wrap fixed"><a href="#masthead"><i class="fa fa-chevron-circle-up"></i></a></div>
 
-	<?php endif; ?>
+<?php endif; ?>
 
-	<footer id="colophon" role="contentinfo">
+<footer id="colophon" role="contentinfo">
+	<div class="wrapper">
 
+
+		<img src="<?php echo esc_url(get_stylesheet_directory_uri('/')); ?>/img/logo2.svg" alt="MASTERS OF BEEF ASSOCIATION" class="footer_logo">
 		<nav id="site-info" class="footer-navigation">
 			<?php
 			wp_nav_menu(
@@ -29,15 +33,20 @@
 			);
 			?>
 		</nav>
+		<?php get_template_part('template-parts/sns'); ?>
+	</div><!-- /.wrapper -->
 
-		<p class="copyright"><?php usces_copyright(); ?></p>
+	<p class="copyright"><?php usces_copyright(); ?></p>
 
-	</footer><!-- #colophon -->
+</footer><!-- #colophon -->
 
-	<?php wp_footer(); ?>
-	</body>
+<?php wp_footer(); ?>
+</body>
+
 </html>
 <?php global $template;
-	$template_name = basename($template, '.php');
-	echo "<!--";var_dump('templatename',$template_name);echo "-->";
+$template_name = basename($template, '.php');
+echo "<!--";
+var_dump('templatename', $template_name);
+echo "-->";
 ?>

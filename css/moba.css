@@ -694,20 +694,119 @@ header .sns_area {
   opacity: 1;
 }
 
-/* SNS */
-footer .sns_list {
-  padding: 10px 0;
+/* --------------------------
+   フッターSNSエリア
+---------------------------*/
+footer {
+  position: relative;
+  background: #fff;
+  color: #000;
+  z-index: 200;
 }
-
-footer .sns_area {
+footer .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 0 auto;
+}
+footer .wrapper a {
+  color: #000;
+}
+footer .wrapper .footer_logo {
+  width: 20%;
+  margin-right: 2em;
+}
+footer .wrapper nav {
+  width: auto;
+  flex: 1;
+}
+footer .wrapper nav .footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+footer .wrapper nav .footer-menu.cf::before {
+  content: none;
+}
+footer .wrapper nav .footer-menu .menu-item {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+footer .wrapper nav .footer-menu .menu-item:hover, footer .wrapper nav .footer-menu .menu-item a:hover {
+  color: #f00;
+  transition: 0.3s;
+}
+footer .wrapper .sns_list {
+  padding: 10px 0;
+  display: flex;
+  font-size: 0;
+  color: #fff;
+}
+footer .wrapper .sns_area {
+  width: 100%;
   text-align: center;
 }
-
-footer .sns_item a {
+footer .wrapper .sns_area .sns_list {
+  justify-content: center;
+}
+footer .wrapper .sns_item {
+  margin: 11px 11px 0 0;
+}
+footer .wrapper .sns_item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #1d1d1d;
   color: #1d1d1d;
+  font-size: 14px;
+  height: 30px;
+  width: 30px;
+  line-height: 27px;
+  text-align: center;
+  transition: all 0.3s ease;
+  transform: rotate(-45deg);
+}
+footer .wrapper .sns_item a:hover {
+  background-color: #f1f0f0;
+  color: #333;
+}
+footer .wrapper .sns_item i {
+  color: #1d1d1d;
+  transform: rotate(45deg);
+}
+footer .wrapper .sns_item img {
+  transform: rotate(45deg);
+  color: #1d1d1d;
+}
+footer .wrapper .sns_item_fb a:hover {
+  background-color: #3B5998;
+  color: #FFF;
+}
+footer .wrapper .sns_item_tw a:hover {
+  background-color: #33CCFF;
+  color: #FFF;
+}
+footer .wrapper .sns_item_ig a:hover {
+  background-color: #8E6051;
+  color: #FFF;
 }
 
+@media screen and (max-width: 767px) {
+  footer .sns_area {
+    top: 10px;
+    right: 10px;
+  }
+  footer .sns_item {
+    margin: 5px 5px 0 0;
+  }
+  footer .sns_item a {
+    font-size: 12px;
+    height: 25px;
+    width: 25px;
+    line-height: 22px;
+  }
+}
 .post-navigation {
   display: flex;
   justify-content: space-between;
@@ -908,7 +1007,15 @@ footer .sns_item a {
   border: solid 1px #e4e4e4;
   border-radius: 10px;
 }
-.contact_001 input[type=text], .contact_001 input[type=email], .contact_001 input[type=url], .contact_001 input[type=tel], .contact_001 input[type=number], .contact_001 input[type=date], .contact_001 input[type=search], .contact_001 input[type=password], .contact_001 textarea {
+.contact_001 input[type=text],
+.contact_001 input[type=email],
+.contact_001 input[type=url],
+.contact_001 input[type=tel],
+.contact_001 input[type=number],
+.contact_001 input[type=date],
+.contact_001 input[type=search],
+.contact_001 input[type=password],
+.contact_001 textarea {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -921,12 +1028,15 @@ footer .sns_item a {
   background-color: #fafafa;
   resize: none;
 }
-.contact_001 input[type=reset], .contact_001 input[type=button], .contact_001 input[type=submit] {
+.contact_001 input[type=reset],
+.contact_001 input[type=button],
+.contact_001 input[type=submit] {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -webkit-appearance: none;
-  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   background-color: #ff3838;
   border-radius: 5px;
   border: 0 none;
@@ -940,9 +1050,4 @@ footer .sns_item a {
 }
 .contact_001 br {
   display: none;
-}
-
-footer {
-  position: relative;
-  z-index: 100;
 }/*# sourceMappingURL=moba.css.map */
